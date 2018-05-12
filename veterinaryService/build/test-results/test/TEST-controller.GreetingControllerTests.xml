@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="controller.GreetingControllerTests" tests="2" skipped="0" failures="0" errors="0" timestamp="2018-05-11T21:33:42" hostname="DESKTOP-TSLFI8P" time="0.241">
+  <properties/>
+  <testcase name="noParamGreetingShouldReturnDefaultMessage" classname="controller.GreetingControllerTests" time="0.19"/>
+  <testcase name="paramGreetingShouldReturnTailoredMessage" classname="controller.GreetingControllerTests" time="0.05"/>
+  <system-out><![CDATA[2018-05-11 16:33:42.675  INFO 7588 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Neither @ContextConfiguration nor @ContextHierarchy found for test class [controller.GreetingControllerTests], using SpringBootContextLoader
+2018-05-11 16:33:42.676  INFO 7588 --- [    Test worker] o.s.t.c.support.AbstractContextLoader    : Could not detect default resource locations for test class [controller.GreetingControllerTests]: no resource found for suffixes {-context.xml, Context.groovy}.
+2018-05-11 16:33:42.677  INFO 7588 --- [    Test worker] t.c.s.AnnotationConfigContextLoaderUtils : Could not detect default configuration classes for test class [controller.GreetingControllerTests]: GreetingControllerTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+2018-05-11 16:33:42.681  INFO 7588 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Found @SpringBootConfiguration controller.Application for test class controller.GreetingControllerTests
+2018-05-11 16:33:42.683  INFO 7588 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+2018-05-11 16:33:42.687  INFO 7588 --- [    Test worker] .b.t.c.SpringBootTestContextBootstrapper : Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@7efbee1f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@75e6b244, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@5f3af2b6, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1b0554e8, org.springframework.test.context.support.DirtiesContextTestExecutionListener@3aafca81, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@7a9b2b02, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@72bcc9a5, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@432f610e, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@7904028, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@24f0a8e3]
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /greeting
+       Parameters = {}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = controller.GreetingController
+           Method = public domain.Greeting controller.GreetingController.greeting(java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"id":1,"content":"Hello, World!"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+
+MockHttpServletRequest:
+      HTTP Method = GET
+      Request URI = /greeting
+       Parameters = {name=[Spring Community]}
+          Headers = {}
+             Body = null
+    Session Attrs = {}
+
+Handler:
+             Type = controller.GreetingController
+           Method = public domain.Greeting controller.GreetingController.greeting(java.lang.String)
+
+Async:
+    Async started = false
+     Async result = null
+
+Resolved Exception:
+             Type = null
+
+ModelAndView:
+        View name = null
+             View = null
+            Model = null
+
+FlashMap:
+       Attributes = null
+
+MockHttpServletResponse:
+           Status = 200
+    Error message = null
+          Headers = {Content-Type=[application/json;charset=UTF-8]}
+     Content type = application/json;charset=UTF-8
+             Body = {"id":2,"content":"Hello, Spring Community!"}
+    Forwarded URL = null
+   Redirected URL = null
+          Cookies = []
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
