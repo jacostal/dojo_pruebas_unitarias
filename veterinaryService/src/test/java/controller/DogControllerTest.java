@@ -1,8 +1,16 @@
 package controller;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.hasItem;
+import static org.junit.Assert.assertThat;
+import static org.junit.Assert.fail;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.junit.Assert.*;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import org.hamcrest.Matchers;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +18,8 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.MvcResult;
+
+import domain.Dog;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
@@ -21,11 +30,25 @@ public class DogControllerTest {
     private MockMvc mockMvc;
 	
 	@Test
+	public void shouldReturnStatusOk() throws Exception {
+		try {
+			mockMvc.perform(get("/dog/getDogs")).andExpect(status().isOk());	
+		} catch (Exception e) {
+			fail();
+		}
+	}
+	
+	@Test
 	public void shouldReturnAListOfDogs() throws Exception {
-		MvcResult result = mockMvc.perform(get("/dog/getDogs")).andReturn();		
-		String resultString = result.getResponse().getContentAsString();
+		DogController dogController = new DogController();
 		
-		assertNotEquals(null, resultString);
+		List<Dog> dogsList = dogController.getDogs();
+		List<Dog> dogListExpected = new ArrayList<>();
+		Dog dog = new Dog(1l, "llaverito", "pinche", "1980-01-01");
+		dogListExpected.add(dog);
 		
+//		assertThat(dogsList, hasItems(dogListExpected));
+		assertThat(dogsList, hasItem(Matchers.<Dog>hasProperty("id", equalTo(1L))));
+		assertThat(dogsList, hasItem(Matchers.<Dog>hasProperty("name", equalTo("llaverito"))));
 	}
 }

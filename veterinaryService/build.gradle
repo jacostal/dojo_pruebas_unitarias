@@ -32,5 +32,9 @@ dependencies {
 	
     testCompile('org.springframework.boot:spring-boot-starter-test')
     testCompile('com.jayway.jsonpath:json-path')
+    
+    // https://mvnrepository.com/artifact/org.hamcrest/hamcrest-all
+	testCompile group: 'org.hamcrest', name: 'hamcrest-all', version: '1.3'
+    
 }
 
