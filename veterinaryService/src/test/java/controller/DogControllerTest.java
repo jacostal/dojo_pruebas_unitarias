@@ -1,5 +1,6 @@
 package controller;
 
+import static org.assertj.core.api.Assertions.assertThat;
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.hasItem;
 import static org.junit.Assert.assertThat;
@@ -47,8 +48,10 @@ public class DogControllerTest {
 		Dog dog = new Dog(1l, "llaverito", "pinche", "1980-01-01");
 		dogListExpected.add(dog);
 		
-//		assertThat(dogsList, hasItems(dogListExpected));
+		assertThat(dogsList, hasItem(Matchers.<Dog>isIn(dogListExpected)));
+		assertThat(dogsList, hasItem(new Dog(1l, "llaverito", "pinche", "1980-01-01")));
 		assertThat(dogsList, hasItem(Matchers.<Dog>hasProperty("id", equalTo(1L))));
 		assertThat(dogsList, hasItem(Matchers.<Dog>hasProperty("name", equalTo("llaverito"))));
+		
 	}
 }
