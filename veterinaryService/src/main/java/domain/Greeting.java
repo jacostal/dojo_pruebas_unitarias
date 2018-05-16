@@ -1,4 +1,4 @@
-package domain.entity;
+package domain;
 
 public class Greeting {
 

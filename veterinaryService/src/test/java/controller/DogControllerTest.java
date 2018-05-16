@@ -25,7 +25,7 @@ public class DogControllerTest {
 		MvcResult result = mockMvc.perform(get("/dog/getDogs")).andReturn();		
 		String resultString = result.getResponse().getContentAsString();
 		
-		assertEquals("", resultString);
+		assertNotEquals(null, resultString);
 		
 	}
 }
