@@ -28,7 +28,10 @@ public class DogEntity {
 	@Column(nullable = false, name = "DATE_OF_BIRTH")
 	private String dateOfBirth;
 	
-	
+	public DogEntity() {
+		super();
+	}
+
 	public DogEntity(Long id, String name, String breed, String dateOfBirth) {
 		super();
 		this.id = id;
